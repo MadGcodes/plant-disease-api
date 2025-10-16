@@ -5,8 +5,10 @@ from ultralytics import YOLO
 from PIL import Image
 import io
 import numpy as np
+from flask_cors import CORS # 1. Import CORS
 
 app = Flask(__name__)
+CORS(app) # 2. Initialize CORS with your app
 
 # Load your trained YOLOv8 model
 model = YOLO('best_model.pt')
